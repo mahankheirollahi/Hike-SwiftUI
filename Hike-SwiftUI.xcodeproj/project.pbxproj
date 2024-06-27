@@ -11,6 +11,9 @@
 		E39CADA22C2D4FF700E33981 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39CADA12C2D4FF700E33981 /* ContentView.swift */; };
 		E39CADA42C2D4FF800E33981 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E39CADA32C2D4FF800E33981 /* Assets.xcassets */; };
 		E39CADA72C2D4FF800E33981 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E39CADA62C2D4FF800E33981 /* Preview Assets.xcassets */; };
+		E39CADAE2C2D520C00E33981 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39CADAD2C2D520C00E33981 /* CardView.swift */; };
+		E39CADB12C2D52E800E33981 /* CustomBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39CADB02C2D52E800E33981 /* CustomBackgroundView.swift */; };
+		E39CADB42C2D56CD00E33981 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39CADB32C2D56CD00E33981 /* ColorExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,9 @@
 		E39CADA12C2D4FF700E33981 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E39CADA32C2D4FF800E33981 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E39CADA62C2D4FF800E33981 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E39CADAD2C2D520C00E33981 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		E39CADB02C2D52E800E33981 /* CustomBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackgroundView.swift; sourceTree = "<group>"; };
+		E39CADB32C2D56CD00E33981 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,10 +57,13 @@
 		E39CAD9E2C2D4FF700E33981 /* Hike-SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				E39CADB22C2D56B000E33981 /* Utilities */,
 				E39CAD9F2C2D4FF700E33981 /* Hike_SwiftUIApp.swift */,
 				E39CADA12C2D4FF700E33981 /* ContentView.swift */,
 				E39CADA32C2D4FF800E33981 /* Assets.xcassets */,
 				E39CADA52C2D4FF800E33981 /* Preview Content */,
+				E39CADAF2C2D52CD00E33981 /* Components */,
+				E39CADB02C2D52E800E33981 /* CustomBackgroundView.swift */,
 			);
 			path = "Hike-SwiftUI";
 			sourceTree = "<group>";
@@ -65,6 +74,22 @@
 				E39CADA62C2D4FF800E33981 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E39CADAF2C2D52CD00E33981 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E39CADAD2C2D520C00E33981 /* CardView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		E39CADB22C2D56B000E33981 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				E39CADB32C2D56CD00E33981 /* ColorExtension.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +163,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E39CADA22C2D4FF700E33981 /* ContentView.swift in Sources */,
+				E39CADAE2C2D520C00E33981 /* CardView.swift in Sources */,
 				E39CADA02C2D4FF700E33981 /* Hike_SwiftUIApp.swift in Sources */,
+				E39CADB12C2D52E800E33981 /* CustomBackgroundView.swift in Sources */,
+				E39CADB42C2D56CD00E33981 /* ColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
