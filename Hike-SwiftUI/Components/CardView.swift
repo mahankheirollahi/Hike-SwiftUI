@@ -8,27 +8,41 @@
 import SwiftUI
 
 struct CardView: View {
+    // MARK: - PROPERTIES
+    
+    @State private var imageNumber: Int = 1
+    @State private var randomNumber: Int = 1
+    
+    // MARK: - FUNCTIONS
+    
+    func randomImage(){
+        repeat{
+            randomNumber = Int.random(in: 1...5)
+        }while randomNumber == imageNumber
+        imageNumber = randomNumber
+        
+    }
+    
     var body: some View {
         
         ZStack {
             CustomBackgroundView()
-            
             VStack {
                 // MARK: - HEADER
-                
                 VStack(alignment:.leading) {
                     HStack {
                         Text("Hiking")
                             .fontWeight(.black)
                             .font(.system(size: 52))
                             .foregroundStyle(LinearGradient(colors: [.customGrayLight,.customGrayMedium],
-                                                        startPoint: .top,endPoint: .bottom))
+                                                            startPoint: .top,endPoint: .bottom))
                         
                         Spacer()
                         
                         Button{
+                         
                         }label: {
-                          CustomButtonView()
+                            CustomButtonView()
                         }
                     }
                     
@@ -38,21 +52,22 @@ struct CardView: View {
                         .foregroundStyle(Color.customGrayMedium)
                     
                 }.padding(.horizontal,20)
+                
+                // MARK: - MAIN CONTENT
+                ZStack {
+                    Circle()
+                        .fill(
+                            LinearGradient(colors: [Color("ColorIndigoMedium"),Color("ColorSalmonLight")], startPoint: .topLeading, endPoint: .bottomTrailing)
+                        )
+                        .frame(width: 256,height: 256)
                     
-                    // MARK: - MAIN CONTENT
-                    ZStack {
-                        Circle()
-                            .fill(
-                                LinearGradient(colors: [Color("ColorIndigoMedium"),Color("ColorSalmonLight")], startPoint: .topLeading, endPoint: .bottomTrailing)
-                            )
-                            .frame(width: 256,height: 256)
-                        
-                        Image("image-1")
-                            .resizable()
-                            .scaledToFit()
-                    }
+                    Image("image-\(imageNumber)")
+                        .resizable()
+                        .scaledToFit()
+                        .animation(.default,value: imageNumber)
+                }
                 Button{
-                    print("Button pressed")
+                    randomImage()
                 }label:{
                     Text("Explore More")
                         .font(.title2)
@@ -63,19 +78,19 @@ struct CardView: View {
                                 radius: 0.25,x: 1,y: 2)
                 }
                 .buttonStyle(GradientButton())
-               
-               
                 
-                    
-                }
-            }   .frame(width: 320,height: 570)
-            
-            // MARK: - FOOTER
-       
-        }//: CARD
-     
-    }
+                
+                
+                
+            }
+        }   .frame(width: 320,height: 570)
+        
+        // MARK: - FOOTER
+        
+    }//: CARD
     
+}
+
 
 
 #Preview {
