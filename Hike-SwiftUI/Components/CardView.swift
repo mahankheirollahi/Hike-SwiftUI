@@ -55,11 +55,8 @@ struct CardView: View {
                 
                 // MARK: - MAIN CONTENT
                 ZStack {
-                    Circle()
-                        .fill(
-                            LinearGradient(colors: [Color("ColorIndigoMedium"),Color("ColorSalmonLight")], startPoint: .topLeading, endPoint: .bottomTrailing)
-                        )
-                        .frame(width: 256,height: 256)
+                    
+                    CustomCircleView()
                     
                     Image("image-\(imageNumber)")
                         .resizable()
@@ -77,16 +74,10 @@ struct CardView: View {
                         .shadow(color: .black.opacity(0.25),
                                 radius: 0.25,x: 1,y: 2)
                 }
+                // MARK: - FOOTER
                 .buttonStyle(GradientButton())
-                
-                
-                
-                
             }
         }   .frame(width: 320,height: 570)
-        
-        // MARK: - FOOTER
-        
     }//: CARD
     
 }
