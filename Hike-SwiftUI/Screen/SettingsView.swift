@@ -80,6 +80,65 @@ struct SettingsView: View {
                 
                 
                 // MARK: - SECTION: ABOUT
+            
+            Section(
+                header:Text("About The App"),
+                footer: HStack{
+                    Spacer()
+                    Text("Copyright All right reserved.")
+                    Spacer()
+                }
+                    .padding(.vertical, 8)
+            
+            ){
+                
+                CustomListRowView(
+                    icon: "apps.iphone",
+                    iconBackgroundColor: .blue,
+                    title: "Application",
+                    trailingText: "Hike")
+                
+                CustomListRowView(
+                    icon: "apps.iphone",
+                    iconBackgroundColor: .red,
+                    title: "Compatibility",
+                    trailingText: "iOS, iPadOS")
+                
+                CustomListRowView(
+                    icon: "swift",
+                    iconBackgroundColor: .orange,
+                    title: "Technology",
+                    trailingText: "Swift")
+                
+                CustomListRowView(
+                    icon: "gear",
+                    iconBackgroundColor: .purple,
+                    title: "Version",
+                    trailingText: "1.0")
+                
+                CustomListRowView(
+                    icon: "ellipsis.curlybraces",
+                    iconBackgroundColor: .teal,
+                    title: "Developer",
+                    trailingText: "Mahan Kheirollahi")
+                
+                CustomListRowView(
+                    icon: "paintpalette",
+                    iconBackgroundColor: .red,
+                    title: "Designer",
+                    trailingText: "Robert Petras")
+                
+                
+                CustomListRowView(
+                    icon: "network",
+                    iconBackgroundColor: .green,
+                    title: "Linkedin",
+                    trailingText: "My Linkedin",
+                    trailingTextURL: "https://www.linkedin.com/in/mahankheirollahi/"
+                )
+                
+                
+            }
             }
             
         }
