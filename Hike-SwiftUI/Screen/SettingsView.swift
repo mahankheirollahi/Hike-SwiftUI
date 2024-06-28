@@ -8,6 +8,16 @@
 import SwiftUI
 
 struct SettingsView: View {
+    //MARK: - PROPERTIES
+    
+    private let alternateAppIcons: [String] = [
+        "AppIcon-MagnifyingGlass",
+        "AppIcon-Map",
+        "AppIcon-Mushroom",
+        "AppIcon-Backpack",
+        "AppIcon-Campfire"
+    ]
+    
     var body: some View {
         
         // MARK: - SECTION HEADER
@@ -52,7 +62,7 @@ struct SettingsView: View {
                 VStack(spacing:8) {
                     Text("Where can you find \nperfect tracks?")
                         .font(.title2)
-                    .fontWeight(.heavy)
+                        .fontWeight(.heavy)
                     
                     Text("The hike which looks gorgeous in photos but is even better once you are actually there. The hike that you hope to do again someday. \nFind the best day hikes in the app."
                     )
@@ -62,24 +72,56 @@ struct SettingsView: View {
                     Text("Dust off the boots! It's time for a walk")
                         .fontWeight(.heavy)
                         .foregroundColor(.customGreenMedium)
-          
+                    
                     
                 }
                 .multilineTextAlignment(.center)
                 .padding(.bottom, 16)
                 .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
                 
-              
+                
             }
             .listRowSeparator(.hidden)
+            
+            
+            
+            
+            // MARK: - SECTION: ICONS
+            
+            Section(header: Text("Alternate Icons")){
+                ScrollView(.horizontal, showsIndicators: false){
+                    HStack(spacing:12) {
+                        ForEach(alternateAppIcons.indices,id:\.self) { item in
+                            Button{
+                                UIApplication.shared.setAlternateIconName(alternateAppIcons[item]){ error in
+                                    if error != nil{
+                                        print("Failed to update the app icon")
+                                    }
+                                }
+                            }label: {
+                                Image("\(alternateAppIcons[item])-Preview")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 80,height: 80)
+                                    .cornerRadius(16)
+                            }
+                        .buttonStyle(.borderless)
+                        }
+                    }
+                    
+                }//: SCROLLVIEW
+                .padding(.top,12)
                 
+                Text("Choose your favorite app icon from the collection above")
+                    .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/,maxWidth: .infinity)
+                    .multilineTextAlignment(.center)
+                    .foregroundColor(.secondary)
+                    .font(.footnote)
+                    .padding(.bottom,12)
                 
-                
-                
-                // MARK: - SECTION: ICONS
-                
-                
-                // MARK: - SECTION: ABOUT
+            }
+            
+            // MARK: - SECTION: ABOUT
             
             Section(
                 header:Text("About The App"),
@@ -89,7 +131,7 @@ struct SettingsView: View {
                     Spacer()
                 }
                     .padding(.vertical, 8)
-            
+                
             ){
                 
                 CustomListRowView(
@@ -139,9 +181,9 @@ struct SettingsView: View {
                 
                 
             }
-            }
-            
         }
+        
+    }
     
 }
 
